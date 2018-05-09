@@ -16,14 +16,14 @@ import java.net.Socket;
  * @author haliltprkk
  */
 public class server {
-    public static void main(String[] args) throws IOException {
+
+
+    public static void islem(int random) throws IOException {
         String clientGelen;
         ServerSocket serverSocket = null;
         Socket clientSocket = null;
-
-        int sayi;
         try {
-            serverSocket = new ServerSocket(7810);
+            serverSocket = new ServerSocket(random);
 
         } catch (Exception e) {
             System.out.println("Port hatasi!");
@@ -43,13 +43,23 @@ public class server {
                     i++;
                 }
                 out.println(sum);
+                while (sum >= 10) {
+
+                    String sayiString = String.valueOf(sum);
+                    sum = 0;
+                    for (int j = 0; j < sayiString.length(); j++) {
+                        sum += Integer.parseInt(String.valueOf(sayiString.charAt(j)));
+
+                    }
+                    out.println(sum);
+                }
             }
             if (parts[1].equals("fk")) {
                 int i, fact = 1;
                 for (i = 1; i <= Integer.parseInt(parts[0]); i++) {
                     fact = fact * i;
                 }
-                System.out.println("Client dan gelen veri :" + clientGelen);
+                System.out.println("client dan gelen veri :" + clientGelen);
                 out.println(fact);
             }
         }
@@ -57,7 +67,16 @@ public class server {
         in.close();
         clientSocket.close();
         serverSocket.close();
-
     }
 
+    public static void main(String arg[]) {
+        try {
+            islem(7006);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
+

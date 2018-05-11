@@ -42,7 +42,7 @@ public class client {
                 break;
         }
 
-        System.out.println("Server'a gönderlecek sayi :");
+        System.out.println("Server'a gönderilecek sayi( e'ye basarsaniz program sonlandirilir) :");
         BufferedReader data = new BufferedReader(new InputStreamReader(System.in));
         while ((deger = data.readLine()) != null) {
             if (deger.trim().equalsIgnoreCase("e")) {
@@ -61,17 +61,16 @@ public class client {
                     System.out.println("Serverden gelen sonuc :" + gelenDeger);
                     endDate = System.nanoTime();
                     if (gelenDeger.length() == 1) {
-                        System.out.println("ok");   //Toplama işleminde rakam tek ise ok yaıp yeniden rakam istiyyor.
+                        System.out.println("ok");   //Toplama işleminde rakam tek ise ok yazıp yeniden rakam istiyor.
                         break;
                     }
                 }
-                System.out.println("Server a gonderilecek sayiyi giriniz : ");
+                System.out.println("Server'a gönderilecek sayi( e'ye basarsaniz program sonlandirilir) :");
             } else if (secim == 2) {
                 System.out.println("Serverden gelen sonuc :" + in.readLine()); // Burası ise kullanıcının faktöryel işlemi seçtiği zaman sunucudan gelen sonucun gösterildiği yer
                 endDate = System.nanoTime(); //burası sunucudan sonucun döndüğü yer
                 System.out.println("ok");
-                System.out.println("Server a gonderilecek sayiyi giriniz : ");
-
+                System.out.println("Server'a gönderilecek sayi( e'ye basarsaniz program sonlandirilir) :");
             }
             dosyayaYaz();
         }
@@ -84,7 +83,7 @@ public class client {
 
     public static void main(String arg[]) throws IOException {
         try {
-            islem(7842);
+            islem(7888);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -101,7 +100,7 @@ public class client {
             }
         }
         String currentTime = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime()); //burda sistem saatini alıyorum
-        double delay =(endDate-startDate)/1000000000; //burda gecikmeyi 1 000 000 000 bölerek nanosaniye cinsinden gecikmeyi hesaplıyorum
+        double delay = (endDate - startDate) / 1000000000; //burda gecikmeyi 1 000 000 000 bölerek nanosaniye cinsinden gecikmeyi hesaplıyorum
         currentTime += "  " + InetAddress.getLocalHost() + " " + String.valueOf(delay);
         ;
         FileWriter fileWriter = new FileWriter(dosya, true);

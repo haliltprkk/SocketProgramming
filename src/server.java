@@ -72,7 +72,7 @@ public class server {
 
     public static void main(String arg[]) throws IOException {
         try {
-            islem(7842);
+            islem(7888);
         } catch (IOException e) {
             e.printStackTrace();
         }

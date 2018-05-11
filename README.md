@@ -8,7 +8,7 @@ All calculation process is making at the server side.
 
 # Warnings
 
--you can click type e when you want to finish the program.
+-you can type e when you want to finish the program.
 
--don't forget click e when you finish your process otherwise YOu need to change port number for each side.
+-don't forget type e when you finish your process otherwise YOu need to change port number for each side.
 

@@ -8,3 +8,5 @@ All calculation process is making at the server side.
 
 # Warnings
 -don't forget the change port number for each time(for each class).
+-you can click type e when you wnat to finish the program.
+

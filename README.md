@@ -7,6 +7,8 @@ All calculation process is making at the server side.
 -The average run trip time and some datas(e.g host name IP address..) keeping with two file that is exist the project.
 
 # Warnings
--don't forget the change port number for each time(for each class).
--you can click type e when you wnat to finish the program.
+
+-you can click type e when you want to finish the program.
+
+-don't forget click e when you finish your process otherwise YOu need to change port number for each side.
 
